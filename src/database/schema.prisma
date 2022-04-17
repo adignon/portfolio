@@ -1,0 +1,145 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AccountMetaKeys{
+    LOGIN_BROWSER
+
+}
+
+enum MediaType{
+    IMAGE
+}
+
+enum ProjectMetaKey{
+    GIT_REPOSITORY
+    APP_URL
+}
+
+enum ProjectStatus{
+    DRAFTED
+    PUBLISHED
+}
+
+enum GeneralMetaKey{
+    PORTFOLIO_USER_IMAGE
+    PORTFOLIO_SLOGAN
+    PORTFOLIO_SUBSLOGAN
+    PORTFOLIO_DESCRIPTION
+    ROOT_USER_EMAIL
+    SETTINGS_PRIVACY
+    FILE_TYPE_REGEX
+}
+
+enum KnowledgeTypes{
+    LIBRARY
+    FRAMEWORK
+}
+
+enum MailFlag{
+    IMPORTANT
+    PENDING_REVIEW
+    REVIEWED
+}
+
+enum MediaSources{
+    CLOUDINARY
+    LOCAL
+    FIREBASE
+}
+
+model Account{
+    id String @id @default(uuid())
+    email String @db.VarChar(255)
+    hashPassword String @db.VarChar(255)
+    metas AccountMeta[]
+}
+
+model AccountMeta{
+    id String @id @default(uuid())
+    key AccountMetaKeys
+    value Json
+    accountId String
+    account Account @relation(fields: [accountId], references: [id])
+}
+
+model Project{
+    id String @id @default(uuid())
+    title String
+    medias Media[]
+    description String @db.Text
+    startAt DateTime
+    endAt DateTime
+    status ProjectStatus @default(DRAFTED)
+    createdAt DateTime @default(now())
+    downloadedMedias Media[] @relation("dowloadedMedias")
+    metas ProjectMeta[]
+}
+
+model ProjectMeta{
+    id String @id @default(uuid())
+    key ProjectMetaKey
+    value String
+    projectId String 
+    project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Media{
+    id String @id @default(uuid())
+    path String
+    fullPath String?
+    type MediaType
+    metaType String
+    mediaMeta Json
+    projects Project[]
+    generalMetas GeneralMeta[]
+    source MediaSources @default(LOCAL)
+    projectDownloadedMedias Project[]  @relation("dowloadedMedias")
+}
+
+model GeneralMeta{
+    id String @id @default(uuid())
+    key GeneralMetaKey
+    value Json?
+    mediaId String? 
+    media Media? @relation(fields: [mediaId], references: [id])
+}
+
+model Knowloadge{
+    id String @id @default(uuid())
+    title String
+    progress Int
+    type KnowledgeTypes
+}
+
+model Notification{
+    id String @id @default(uuid())
+    content String 
+    read Boolean @default(false)
+    createdAt DateTime
+}
+
+model ContactMessage{
+    id String @id @default(uuid())
+    senderEmail String
+    senderFullname String
+    message String
+    title String
+    read Boolean @default(false)
+    createdAt DateTime @default(now())
+    badge MailFlag
+}
+
+model UsageMeta{
+    id String @id @default(uuid())
+    ipAdress String? 
+    visitedAt DateTime @default(now())
+}

@@ -1,0 +1,26 @@
+.backdrop{
+    transition: opacity 100ms;
+    opacity:0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.452);
+}
+.backdrop.enter {
+    opacity: 0;
+}
+.backdrop.enterActive{
+    opacity:1
+}
+.backdrop.exit{
+    opacity: 0;
+}
+.backdrop.exitActive{
+    opacity: 0;
+    display: none;
+}
+
+
+

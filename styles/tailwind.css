@@ -1,0 +1,41 @@
+@import url(./globals.css);
+@tailwind base;
+@layer base{
+    *{
+        box-sizing:border-box;
+    }
+    .max-w-xxs	{
+        max-width: 15rem;
+    }
+    
+}
+
+@tailwind components;
+
+@layer components{
+
+}
+
+@tailwind utilities;
+@layer utilities{
+    .z-1{
+        z-index: 1;
+    }
+    .z-2{
+        z-index: 2;
+    }
+    .max-w-max {
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;
+        width: max-content;
+    }
+    .-top-header-desktop{
+        top:-68px;
+    }
+    .pt-header{
+        padding-top:68px;
+    }
+}
+
+@tailwind variants;

@@ -1,0 +1,22 @@
+.displayer{
+    position: relative;
+    bottom: -100%;
+    animation: fadeup 1000ms;
+
+}
+
+@keyframes fadeup{
+    0%{
+        position: relative;
+        bottom: -20px;
+        opacity:0;
+    }
+    99.9%{
+        bottom: 0px;
+        opacity:calc(99.9 / 100 );
+    }
+    100%{
+        position: static;
+        opacity:1;
+    }
+}

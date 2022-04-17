@@ -1,0 +1,13 @@
+{
+    "ROOT_USER_EMAIL":"agblap1@gmail.com",
+    "FILE_TYPE_REGEX":[
+        "*"
+    ],
+    "PORTFOLIO_USER_IMAGE":{
+        "path":"/assets/images/max.jpg"
+    },
+    "PORTFOLIO_SLOGAN":"Hey I'm Adignon",
+    "PORTFOLIO_SUBSLOGAN":"Welcome to my portfolio",
+    "PORTFOLIO_DESCRIPTION":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aliquam, animi ducimus nobis saepe et architecto iste similique ab dolores accusantium consectetur vitae voluptatibus aspernatur sit incidunt nulla. Soluta, debitis!Dolorem atque ad dolores voluptatibus reprehenderit corrupti nobis repudiandae tenetur suscipit quae esse mollitia repellat expedita maxime at eum nam iusto sed, labore sint magnam eligendi vitae! Ipsa, quia culpa.Ipsam ipsum animi provident dolorum. Temporibus explicabo, maxime neque, nemo modi fugit accusamus vel praesentium accusantium facilis nesciunt itaque voluptatum voluptatem saepe hic distinctio est et atque quod unde eaque.Repellat praesentium sit in similique quis assumenda pariatur molestias molestiae dolores? Quod ducimus possimus exercitationem quos, ad nihil veniam laudantium id blanditiis assumenda a minima odio nemo incidunt. Sit, soluta? Dolorem doloribus quod consectetur enim quos molestias blanditiis sunt, aut id tempora quisquam dolores dignissimos voluptate voluptatibus rem libero rerum non ut animi ex fuga nam. Voluptatibus commodi quod vero.",
+    "SETTINGS_PRIVACY":""
+}

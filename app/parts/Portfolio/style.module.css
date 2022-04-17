@@ -1,0 +1,38 @@
+
+.underline::after{
+    content:"";
+    height: 7px;
+    display:"block";
+    position: absolute;
+    bottom:-5px;
+    left:50%;
+    width:30px;
+    transform:translateX(-50%);
+}
+.link{
+    position: relative;
+    cursor: pointer;
+}
+.link::after{
+    content:"";
+    display:"block";
+    position: absolute;
+    bottom:-5px;
+    left:50%;
+    width:0px;
+    transform:translateX(-50%)   ;
+    transition:width 200ms;
+}
+.link:hover::after{
+    
+    height:7px;
+    width:100%;
+    border-radius: 100px;
+    background-color: #fff;
+}
+.multiline{
+     display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

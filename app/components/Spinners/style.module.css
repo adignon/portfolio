@@ -1,0 +1,36 @@
+.dot{
+    display: flex;
+    align-items: center;
+}
+
+.dot > div{
+    width:10px;
+    height:10px;
+    background:#ccc;
+    border-radius:100%;
+    margin:0px 2px;
+    transition:background 100ms;
+        }
+        .dot > div:nth-child(1){
+            animation:dot 500ms infinite;
+        }
+
+        .dot > div:nth-child(2){
+            animation:dot 500ms 950ms infinite;
+        }
+
+        .dot > div:nth-child(3){
+            animation:dot 500ms 1350ms infinite;
+}
+
+
+
+@keyframes dot {
+    0%{
+        background:rgb(139, 139, 139);
+    }
+    100%{
+        background:#ccc;
+    }
+
+}

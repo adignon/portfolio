@@ -1,0 +1,43 @@
+.container>div:nth-child(1){
+    position: relative;  
+    
+}
+
+.container.closeLeft > div:nth-child(1){
+    left:-100vw;
+    transition:left 100ms;
+}
+.container.closeLeft{
+    background-color: transparent;
+    transition:background-color  100ms, left 0ms 200ms ;
+    left:-100vw;
+}
+.container.openLeft>div:nth-child(1){
+    left:0%;
+    transition:left  100ms;
+}
+.container.openLeft{
+    background-color: #00000098;
+    transition:background-color 100ms;
+    left:0%;
+}
+
+.container.closeRight > div:nth-child(1){
+    left: 100vw;
+    transition:left 100ms;
+}
+.container.closeRight{
+    background-color: transparent;
+    transition:background-color  100ms, left 0ms 200ms ;
+    left:100vw;
+}
+.container.openRight>div:nth-child(1){
+    left:0%;
+    transition:left  100ms;
+}
+.container.openRight{
+    background-color: #00000098;
+    transition:background-color 100ms;
+    left:0%;
+}
+

@@ -1,0 +1,23 @@
+.button:hover::after, .button.disabled:hover::after{
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left:0;
+    background-color: #00000026;
+    cursor: pointer;
+}
+.button.disabled:hover::after{
+    background-color: transparent !important;
+    cursor: auto;
+}
+.disabled{
+    opacity: 0.5;
+    
+}
+
+.button{
+    overflow: hidden;
+}

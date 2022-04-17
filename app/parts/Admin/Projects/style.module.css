@@ -1,0 +1,15 @@
+.modal{
+    transition: transform 100ms;
+}
+
+.modal.entering{
+    transform: scale(0.9);
+}
+
+.modal.enter{
+    transform: scale(1);
+}
+
+.modal.exiting{
+    transform: scale(0.9);
+}
